@@ -33,7 +33,7 @@ const FooterContainer = ({HomeRef, ProcessRef, EventRef, ScrollToSection} : Home
     }
 
     return (
-        <div className="w-full flex justify-center items-center backdrop-blur-lg bg-[#eeeee5] border-t border-[#000]/20 h-[100%] lg:w-120">
+        <div className="flex justify-center items-center backdrop-blur-lg bg-[#eeeee5] border-t border-[#000]/20 h-[100%]">
             <footer className="w-320 h-full overflow-hidden">
 
                 {/* Top Container */}
