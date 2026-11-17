@@ -53,7 +53,7 @@ const Process = ({ProcessRef}) => {
                             return (
                                 <li
                                 key={index}
-                                className={`list-none h-80 w-70 rounded-3xl shadow-lg shadow-gray p-3 pt-5 hover:scale-[1.02] transition duration-200 cursor-default shadow-lg ${element.id === 2 || element.id === 4 ? "mt-20" : ""}`}
+                                className={`list-none h-80 w-70 rounded-3xl shadow-lg shadow-gray p-3 pt-5 hover:scale-[1.02] transition duration-200 cursor-default shadow-lg ${element.id === 2 || element.id === 4 ? "lg:mt-20" : ""}`}
                                 style={{ backgroundColor: element.color, color: element.text }}
                                 >
                                     <span 

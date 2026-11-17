@@ -40,7 +40,7 @@ const LoginPage = () => {
                 <div className='register-form w-full lg:w-[50%] overflow-y-auto'>
                     {
                         toggleActive === "Sign In" ? 
-                        <form className='w-full w-[100%] p-10'>
+                        <form className='w-[100%] p-10'>
                             <header className='w-full h-25 flex flex-col justify-center items-center lg:items-start'>
                                 <div className='flex items-center justify-start gap-1'>
                                     <img src={Logo.src} className='w-10'/>

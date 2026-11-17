@@ -1,12 +1,20 @@
 "use client"
 
 import { useEffect, useState } from 'react';
+import type { Ref } from "react";
+
+interface HomePageProps {
+    HomeRef: Ref<HTMLDivElement>;
+    ProcessRef: Ref<HTMLDivElement>;
+    EventRef: Ref<HTMLDivElement>;
+    ScrollToSection: Ref<HTMLDivElement>;
+}
 
 const QuickLinks = ["Home", "Process", "Events", "About", "Reviews"];
 const Others = ["Docs", "Portal", "Careers", "Collab", "Developer"];
 const Contact = ["Mandalay, Yangon Myanmar · Subang Jaya Selangor Malaysia · Dubai United Arab Emirates", "+959975562275", "thecoffeeclubsociety@gmail.com"]
 
-const FooterContainer = ({HomeRef, ProcessRef, EventRef, ScrollToSection}) => {
+const FooterContainer = ({HomeRef, ProcessRef, EventRef, ScrollToSection} : HomePageProps) => {
 
     const [currentYear, setCurrentYear ] = useState<number | null>(null);
 
@@ -25,17 +33,17 @@ const FooterContainer = ({HomeRef, ProcessRef, EventRef, ScrollToSection}) => {
     }
 
     return (
-        <div className="w-full flex justify-center items-center backdrop-blur-lg bg-[#eeeee5] border-t border-[#000]/20 h-120">
+        <div className="w-full flex justify-center items-center backdrop-blur-lg bg-[#eeeee5] border-t border-[#000]/20 h-[100%] lg:w-120">
             <footer className="w-320 h-full overflow-hidden">
 
                 {/* Top Container */}
-                <div className="w-full h-70 border-b border-[#000]/20 flex">
-                    <section className="h-full w-[30%] p-10">
+                <div className="w-full lg:h-70 border-b border-[#000]/20 flex md:pr-10">
+                    <section className="h-full w-full  md:w-[30%] lg:w-[30%] p-10">
                         <h3 className="font-[Recursive] text-[20px] font-bold">The Coffee <span className="text-orange-400">Club</span></h3>
                         <p className="text-[14px] font-[Valley] text-[#000]/60 mt-5">Bringing people together through meaningful conversations, shared experiences, and opportunities to grow.</p>
                     </section>
                     
-                    <section className="w-[70%] flex justify-center items-start pt-10 gap-50">
+                    <section className="hidden md:flex lg:flex w-[70%]  justify-center items-start pt-10 md:gap-20 gap-50">
                         <ul className="flex flex-col gap-2">
                             <h3 className="font-[15px] font-[Recursive] mb-3 font-bold">Quick Links</h3>
                             {
@@ -78,15 +86,15 @@ const FooterContainer = ({HomeRef, ProcessRef, EventRef, ScrollToSection}) => {
                 </div>
 
                 {/* Bottom Container */}
-                <div className="flex flex-col items-center justify-center h-50 pt-20">
-                    <div className="flex justify-center items-center pr-3 w-full">
-                        <span className="font-[Valley] text-[13px] w-[30%]">&copy;{currentYear} The Coffee Club. All Rights Reserved.</span>
-                        <span className="w-[40%] flex justify-center font-[Valley] text-[13px]">Developed by Win Htet Lin</span>
+                <div className="flex flex-col items-center justify-center lg:h-50 p-3 lg:pt-20 w-full">
+                    <div className="flex justify-center items-center pr-3 w-full h-full">
+                        <span className="font-[Valley] text-[13px] w-[30%] w-full p-3">&copy;{currentYear} The Coffee Club. All Rights Reserved.</span>
+                        <span className="hidden w-[40%] lg:flex justify-center font-[Valley] text-[13px]">Developed by Win Htet Lin</span>
                         <span 
                         onClick={() => ScrollToSection(HomeRef)}
-                        className="text-[13px] font-[Valley] cursor-pointer w-[30%] flex justify-end"><span className="hover:text-[#000]/60 transition duration-200">Scroll To Top</span></span>
+                        className="text-[13px] hidden md:flex lg:flex font-[Valley] cursor-pointer w-[60%] lg:w-[30%] justify-end"><span className="hover:text-[#000]/60 transition duration-200">Scroll To Top</span></span>
                     </div>
-                    <h3 className="text-[130px] font-bold">THE COFFEE <span className="text-orange-400">CLUB</span></h3>
+                    <h3 className="hidden md:flex lg:flex md:text-[95px] text-[130px] font-bold">THE COFFEE <span className="text-orange-400">CLUB</span></h3>
                 </div>
             </footer>   
         </div>
