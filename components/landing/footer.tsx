@@ -33,7 +33,7 @@ const FooterContainer = ({HomeRef, ProcessRef, EventRef, ScrollToSection} : Home
     }
 
     return (
-        <div className="w-full flex justify-center items-center backdrop-blur-lg bg-[#eeeee5] border-t border-[#000]/20 h-[100%] lg:w-120">
+        <div className="flex justify-center items-center backdrop-blur-lg bg-[#eeeee5] border-t border-[#000]/20 h-[100%]">
             <footer className="w-320 h-full overflow-hidden">
 
                 {/* Top Container */}
@@ -43,7 +43,7 @@ const FooterContainer = ({HomeRef, ProcessRef, EventRef, ScrollToSection} : Home
                         <p className="text-[14px] font-[Valley] text-[#000]/60 mt-5">Bringing people together through meaningful conversations, shared experiences, and opportunities to grow.</p>
                     </section>
                     
-                    <section className="hidden md:flex lg:flex w-[70%]  justify-center items-start pt-10 md:gap-20 gap-50">
+                    <section className="hidden md:flex lg:flex w-[70%]  justify-center items-start pt-10 md:gap-20 lg:gap-50">
                         <ul className="flex flex-col gap-2">
                             <h3 className="font-[15px] font-[Recursive] mb-3 font-bold">Quick Links</h3>
                             {
@@ -94,7 +94,7 @@ const FooterContainer = ({HomeRef, ProcessRef, EventRef, ScrollToSection} : Home
                         onClick={() => ScrollToSection(HomeRef)}
                         className="text-[13px] hidden md:flex lg:flex font-[Valley] cursor-pointer w-[60%] lg:w-[30%] justify-end"><span className="hover:text-[#000]/60 transition duration-200">Scroll To Top</span></span>
                     </div>
-                    <h3 className="hidden md:flex lg:flex md:text-[95px] text-[130px] font-bold">THE COFFEE <span className="text-orange-400">CLUB</span></h3>
+                    <h3 className="hidden lg:flex md:text-[95px] text-[130px] font-bold">THE COFFEE <span className="text-orange-400">CLUB</span></h3>
                 </div>
             </footer>   
         </div>
