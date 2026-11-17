@@ -1,11 +1,15 @@
 
-
+import type { Ref } from "react";
 import Cover from '../../public/img/Intro.png';
 
 // const { photo1, photo2, photo3, photo4 } = viewers;
 // const view = [photo1, photo2, photo3, photo4];
 
-const HomePage = ({HomeRef}) => {
+interface HomePageProps {
+    HomeRef: Ref<HTMLDivElement>;
+}
+
+const HomePage = ({HomeRef} : HomePageProps) => {
     return (
         <div ref={HomeRef} className="flex w-full justify-center items-center pt-10">
             <div className="w-full lg:w-320 flex flex-col lg:flex-row justify-center pt-20 border-b border-[#000]/20 pb-20">
@@ -17,7 +21,7 @@ const HomePage = ({HomeRef}) => {
                     {/* Main Pargraph */}
                     <div className="flex flex-col mt-10 lg:pl-5 lg:border-l lg:border-orange-400 pt-5 pb-5">
                         <h3 className="font-[Recursive] font-400 text-[25px] text-center lg:text-start">Empowering Students to Learn, Connect, and Grow Beyond Boundaries</h3>
-                        <p className="text-[15px] text-[#000]/60 mt-1 font-[Valley] text-center lg:text-start">Access world-class educational resources, join active student communities,
+                        <p className="text-[15px] text-[#000]/60 p-3 mt-1 font-[Valley] text-center lg:text-start">Access world-class educational resources, join active student communities,
                             and participate in events designed to build your future.
                         </p>
 
