@@ -96,7 +96,7 @@ export default async function AdminReview() {
                                            <span className='  text-[13px] font-[Valley] text-[#000000]/60'>{item.rating}/10</span>
                                         </div>
 
-                                        <p className='mt-2 flex justify-center w-full text-[13px] text-[#000000]/60 w-[50%] h-full'>{item.comment}</p>
+                                        <p className='mt-2 flex justify-center w-full text-[13px] text-[#000000]/60  h-full'>{item.comment}</p>
                                     </div>
                                 ))}
                             </div>

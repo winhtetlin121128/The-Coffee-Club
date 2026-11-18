@@ -220,12 +220,15 @@ const AdminStudent = () => {
     }
 
     return (
-        <div className="w-full flex flex-col justify-center items-start p-3 pb-20">
+        
+        <div> {/* overall card */}
 
-            <div className='flex w-full p-1 justify-between items-center h-13'>
+        <div className="hidden md:block w-full flex flex-col justify-center items-start p-3 pb-20"> {/* desktop view */}
+
+            <div className=' flex w-full p-1 justify-between items-center h-13'>
                 <h3 className='font-[Recursive] text-[15px] font-bold'>Student List</h3>
                 <div className='flex gap-3 h-full items-center'>
-                    <select onChange={handleSelectCategory} className='student-option font-[Valley] text-[13px] border-[#000]/20 text-[#000]/60 border p-1 pb-1 rounded-md active:border-[#000]/20'>
+                    <select onChange={handleSelectCategory} className='student-option font-[Valley] text-[13px] border-[#000000]/20 text-[#000000]/60 border p-1 pb-1 rounded-md active:border-[#000000]/20'>
                         {
                             SelectOption.map((element, index) => {
                                 return (
@@ -234,30 +237,30 @@ const AdminStudent = () => {
                             })
                         }
                     </select>
-                    <span className='font-[Valley] text-[15px] text-[#000]/60'>student : 1300</span>
+                    <span className='font-[Valley] text-[15px] text-[#000000]/60'>student : 1300</span>
                 </div>
             </div>
 
-            <div className="w-full h-[100%] border border-[#000]/20 rounded-xl">
-                <header className='h-13 border-b border-[#000]/20 flex items-center pl-3'>
+            <div className="w-full h-full border border-[#000000]/20 rounded-xl overflow-x-auto min-w-225 text-left border-collapse">
+                <header className='h-13 border-b border-[#000000]/20 flex items-center pl-3'>
                     {
                         Headertag.map((element, index) => {
                             return(
                                 <li key={index} 
                                 style={{ width: `${element.width}%`}}
-                                className='list-none text-[13px] font-[Valley] text-[#000]/60'>{element.title}</li>
+                                className='list-none text-[13px] font-[Valley] text-[#000000]/60'>{element.title}</li>
                             )
                         })
                     }
 
-                    <span className='font-[Valley] text-[13px] w-30 flex justify-center text-[#000]/60'>Record : { ExampleData.length < 10 ? `0${ExampleData.length}` : ExampleData.length}</span>
+                    <span className='font-[Valley] text-[13px] w-30 flex justify-center text-[#000000]/60'>Record : { ExampleData.length < 10 ? `0${ExampleData.length}` : ExampleData.length}</span>
                 </header>
 
-                <div className='h-[100%]'>
+                <div className='h-full overflow-x-auto'>
                     {
                         ExampleData.slice(0, 30).map((element, index) => {
                             return (
-                                <li key={index} className='flex items-center p-3 text-[13px] text-[#000]  h-15 border-b border-[#000]/20'>
+                                <li key={index} className='flex items-center p-3 text-[13px] text-[#000000]  h-15 border-b border-[#000000]/20 min-w-225 text-left border-collapse'>
                                     <span className='w-[5%]'>{index < 9 ? `0${index + 1}` : index + 1}</span>
                                     <span className='w-[10%]'>{element.id}</span>
                                     <span className='w-[15%]'>{element.name}</span>
@@ -273,8 +276,82 @@ const AdminStudent = () => {
 
                 <Listfooter />
             </div>
-        </div>
-    )
+        </div> {/* Desktop view end */}
+
+        <div className="md:hidden px-10  w-full flex flex-col justify-center items-start p-3 pb-20"> {/* mobile view */}
+
+            <div className='flex w-full p-1 justify-between items-center h-13'>
+                <h3 className='font-[Recursive] text-[15px] font-bold'>Student List</h3>
+                <span className='font-[Valley] text-[15px] text-[#000000]/60'>student : 1300</span>
+            </div>
+
+                <div className='mb-5 flex gap-3 w-full  justify-between'>
+                    <select onChange={handleSelectCategory} className='student-option font-[Valley] text-[13px] border-[#000000]/20 text-[#000000]/60 border p-1 pb-1 rounded-md active:border-[#000000]/20'>
+                        {
+                            SelectOption.map((element, index) => {
+                                return (
+                                    <option value={element.id} key={index}>{element.title}</option>
+                                )
+                            })
+                        }
+                    </select>
+
+                    <span className=' font-[Valley] text-[13px]  flex justify-center text-[#000000]/60'>Record : { ExampleData.length < 10 ? `0${ExampleData.length}` : ExampleData.length}</span>
+
+                </div>
+
+            <div className="mx-auto w-[70%] max-w-full border border-[#000000]/20 rounded-xl">
+                <header className='hidden h-13 border-b border-[#000000]/20 flex items-center pl-3'>
+                    {
+                        Headertag.map((element, index) => {
+                            return(
+                                <li key={index} 
+                                style={{ width: `${element.width}%`}}
+                                className='list-none text-[13px] font-[Valley] text-[#000000]/60'>{element.title}</li>
+                            )
+                        })
+                    }
+
+                </header>
+
+                <div className='gird grid-colw-1 sm:grid-cols-2 lg:hidden max-w-full mx-auto '>
+                    {
+                        ExampleData.slice(0, 30).map((element, index) => {
+                            return (
+                                
+                                <li key={index} className='gap-2 w-full  flex flex-col  p-5  text-[13px] text-[#000000]  border-b border-full border-[#000000]/20'>
+                                    
+                                    <div className="flex justify-between items-start">
+                                        <span className='font-bold text-s text-gray-600'>{element.id}</span>
+                                        <span className='px-2 py-1 bg-gray-300 rounded-full text-xs font-medium '>{element.type}</span>
+
+                                    </div>
+
+                                    <div className="flex flex-col w-full ">
+                                        <span className='text-xl font-medium text-gray-700'>{element.name}</span>
+                                       <span className=''>{element.email}</span>
+                                    </div>
+                                     
+                                     <hr className="text-[#000000]/20"/>
+
+                                    <div className="flex justify-between">
+                                        <span className='text-s font-medium text-gray-600'>{element.number}</span>
+                                        <span className='text-s font-medium text-gray-600'>{element.address}</span>
+                                    </div>
+
+                                    
+                                    
+                                </li>
+                            )
+                        })
+                    }
+                </div>
+
+                <Listfooter/>
+            </div>
+        </div> {/* mobile view end */}
+        </div> 
+    );
 }
 
 export default AdminStudent
